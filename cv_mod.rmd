@@ -60,7 +60,12 @@ Contact {#contact}
 CV %>% print_contact_info()
 ```
 
+<br>
 
+```{r}
+# grabbed this bit from Ted Laderas ---
+cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/shannonpileggi/shannon_pileggi_cv/blob/main/shannon_pileggi_cv.pdf)")
+```
 
 Technical {#skills}
 --------------------------------------------------------------------------------
@@ -72,13 +77,12 @@ CV %>% print_skill_bars(bar_color = "#bdd7e7", bar_background = "#F2F2F2")
 ```
 
 <br>
-<br>
-<br>
 
 ```{r}
 CV %<>% print_text_block('industy_experience_aside')
 ```
 
+<br>
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
