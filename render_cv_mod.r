@@ -21,6 +21,6 @@ rmarkdown::render("cv_mod.rmd",
 # links stay as links ---
 # tmp_html_cv_loc <- here::here("cv_mod.html")
 # links convert to footnotes ---
-#tmp_html_cv_loc <- here("shannon_pileggi_cv_temp.html")
-#pagedown::chrome_print(input = tmp_html_cv_loc,
-#                       output = "shannon_pileggi_cv.pdf")
+tmp_html_cv_loc <- here::here("shannon_pileggi_cv_temp.html")
+pagedown::chrome_print(input = tmp_html_cv_loc,
+                       output = "shannon_pileggi_cv.pdf")
