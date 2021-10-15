@@ -1,0 +1,131 @@
+---
+title: "Shannon Pileggi's CV"
+author: Shannon McClintock Pileggi, PhD
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: true
+output:
+  pagedown::html_resume:
+    css: ['dd_cv_mod.css', 'resume']
+    self_contained: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+source("cv_printing_functions.r")
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  # final version ----
+#  data_location = #"https://docs.google.com/spreadsheets/d/1IhttKaMA_zDC_wntAQz0#X3kJ2_bNCLhttQqzg2xZpqw/edit?usp=sharing",
+  # short version ----
+  data_location = "https://docs.google.com/spreadsheets/d/1Q_OEl-mUwspaj021A7zfguLI5VGwnREGheh59-cd9jI/edit#gid=917338460",
+  pdf_mode = params$pdf_mode
+)
+
+```
+
+
+```{r}
+# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
+```
+
+
+Aside
+================================================================================
+
+
+![](shannon-circle.png){width=90%}
+
+
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %>% print_contact_info()
+```
+
+<br>
+
+
+Technical {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+# adelphi navy blue
+#CV %>% print_skill_bars(bar_color = "#003569")
+CV %>% print_skill_bars(bar_color = "#bdd7e7", bar_background = "#F2F2F2")
+```
+
+
+<br>
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+Last updated on `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Shannon M. Pileggi, PhD {#title}
+--------------------------------------------------------------------------------
+
+```{r}
+# Note the special double pipe so we modify the CV object in place
+# CV %<>% print_text_block("intro") 
+```
+
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('education')
+```
+
+
+
+
+Professional Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+
+```{r}
+CV %<>% print_section('industry_positions')
+```
+
+
+Select blog posts {data-icon=pencil-alt}
+--------------------------------------------------------------------------------
+
+
+
+```{r}
+CV %<>% print_section('blogging')
+```
+
+
+
+```{r}
+CV %<>% print_links()
+```
+

@@ -23,9 +23,9 @@ source("cv_printing_functions.r")
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
   # final version ----
-  data_location = "https://docs.google.com/spreadsheets/d/1IhttKaMA_zDC_wntAQz0X3kJ2_bNCLhttQqzg2xZpqw/edit?usp=sharing",
-  # test version ----
-  #data_location = "https://docs.google.com/spreadsheets/d/1OgFZe2K7uWhZW1J0VDprINMe4otv6oJllu9peVxYiT4/edit?usp=sharing",
+  data_location = "https://docs.google.com/spreadsheets/d/1IhttKaMA_zDC_wntAQz0X3kJ2_bNCLhttQqzg2xZpqw/edit#gid=917338460",
+  # short version ----
+  #data_location = "https://docs.google.com/spreadsheets/d/1Q_OEl-mUwspaj021A7zfguLI5VGwnREGheh59-cd9jI/edit#gid=917338460",
   pdf_mode = params$pdf_mode
 )
 
